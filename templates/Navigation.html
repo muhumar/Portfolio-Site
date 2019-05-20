@@ -1,0 +1,13 @@
+{% url 'index' as index_url %}
+{% url 'services' as services_url %}
+{% url 'portfolio' as portfolio_url %}
+{% url 'contact' as contact_url %}
+
+
+{% load static %}
+{% block content %}
+    <li class="{% if request.path == index_url %} active {% endif%}"><a href="{% url 'index' %}"><span><small>01</small>Home</span></a></li>
+    <li class="{% if request.path == services_url %} active {% endif%}"><a href="{% url 'services' %}"><span><small>02</small>Services</span></a></li>
+    <li class="{% if request.path == portfolio_url %} active {% endif%}"><a href="{% url 'portfolio' %}"><span><small>03</small>Portfolio</span></a></li>
+    <li class="{% if request.path == contact_url %} active {% endif%}"><a href="{% url 'contact' %}"><span><small>04</small>Contact</span></a></li>
+{% endblock %}
